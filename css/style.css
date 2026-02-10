@@ -1,0 +1,943 @@
+/* ============================================
+   Elevation Hair - Site Styles
+   Replicated from www.elevationhair.com.au
+   ============================================ */
+
+/* --- Fonts --- */
+@font-face {
+  font-family: 'futura-lt-w01-book';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//static.parastorage.com/fonts/v2/790166f1-b347-4f16-8a29-f0c4931a7c35/v1/futura-lt-w01-book.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'futura-lt-w01-light';
+  font-style: normal;
+  font-weight: 400;
+  src: url('//static.parastorage.com/fonts/v2/8e5b5cbc-6ad9-49f7-aee7-4e5133c3ee4d/v1/futura-lt-w01-light.woff2') format('woff2');
+  font-display: swap;
+}
+
+/* --- CSS Variables --- */
+:root {
+  --color-white: #ffffff;
+  --color-black: #181818;
+  --color-charcoal: #282828;
+  --color-olive: #727557;
+  --color-olive-light: #A5A88A;
+  --color-olive-dark: #4C4E3A;
+  --color-grey-light: #ECECEA;
+  --color-grey-med: #C5C5C5;
+  --color-grey: #8C8C8C;
+  --color-grey-dark: #525252;
+  --color-rose: #CE786B;
+  --color-pink: #E7BCB5;
+  --color-terracotta: #B04A3A;
+
+  --font-book: 'futura-lt-w01-book', sans-serif;
+  --font-light: 'futura-lt-w01-light', sans-serif;
+
+  --site-width: 980px;
+}
+
+/* --- Reset --- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-light);
+  font-size: 15px;
+  line-height: 1.875em;
+  color: var(--color-black);
+  background: var(--color-white);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* --- Layout --- */
+.container {
+  max-width: var(--site-width);
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+/* ============================================
+   HEADER
+   ============================================ */
+.site-header {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 0 0;
+  max-width: var(--site-width);
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+.header-logo img {
+  width: 286px;
+  height: 40px;
+  object-fit: contain;
+}
+
+.btn-contact {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 118px;
+  height: 40px;
+  border: 1px solid var(--color-olive);
+  background: transparent;
+  color: var(--color-olive);
+  font-family: var(--font-light);
+  font-size: 15px;
+  line-height: 1.875em;
+  cursor: pointer;
+  transition: border-color 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.btn-contact:hover {
+  background-color: var(--color-olive);
+  border-color: transparent;
+  color: var(--color-black);
+}
+
+/* Nav sub-bar */
+.header-subbar {
+  background-color: var(--color-charcoal);
+  height: 5px;
+}
+
+/* Navigation row */
+.header-nav {
+  max-width: var(--site-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 0;
+}
+
+.nav-menu a {
+  display: block;
+  padding: 20px 15px;
+  font-family: var(--font-light);
+  font-size: 14px;
+  line-height: 30px;
+  color: var(--color-white);
+  transition: color 0.4s ease;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  color: var(--color-grey-light);
+}
+
+.header-contact {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-family: var(--font-light);
+  font-size: 14px;
+  line-height: 1.79em;
+}
+
+.header-contact a {
+  color: var(--color-white);
+  transition: color 0.4s ease;
+}
+
+.header-contact a:hover {
+  color: var(--color-grey-light);
+}
+
+.social-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.social-bar a {
+  display: block;
+  width: 20px;
+  height: 20px;
+}
+
+.social-bar img {
+  width: 20px;
+  height: 20px;
+  object-fit: cover;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================ */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 780px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--color-white);
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 37% 0%;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  padding: 0 30px;
+}
+
+.hero h1 {
+  font-family: var(--font-book);
+  font-size: 72px;
+  line-height: 1.25em;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.hero .subtitle {
+  font-family: var(--font-light);
+  font-size: 20px;
+  line-height: 1.67em;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.hero .description {
+  font-family: var(--font-light);
+  font-size: 15px;
+  line-height: 1.875em;
+  font-weight: 400;
+}
+
+/* ============================================
+   HOURS SECTION (Welcome)
+   ============================================ */
+.hours-wrapper {
+  background-color: var(--color-olive);
+  padding: 40px 0;
+}
+
+.hours-section {
+  display: flex;
+  max-width: var(--site-width);
+  margin: 0 auto;
+}
+
+.hours-image {
+  flex: 0 0 60%;
+  height: 620px;
+  overflow: hidden;
+  background: url('../images/natural-beauty.jpg') 28% 0% / cover no-repeat fixed;
+}
+
+.hours-image img {
+  display: none;
+}
+
+.hours-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 60px;
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.hours-content h2 {
+  font-family: var(--font-book);
+  font-size: 22px;
+  line-height: 1.41em;
+  font-weight: 400;
+  color: var(--color-olive);
+  margin-bottom: 20px;
+}
+
+.hours-content p {
+  font-family: var(--font-light);
+  font-size: 15px;
+  line-height: 1.875em;
+  color: var(--color-white);
+}
+
+/* ============================================
+   INSTAGRAM SECTION
+   ============================================ */
+.instagram-section {
+  background-color: var(--color-black);
+  padding: 40px 0;
+  text-align: center;
+}
+
+.instagram-section h2 {
+  font-family: var(--font-book);
+  font-size: 40px;
+  line-height: 1.35em;
+  font-weight: 400;
+  color: var(--color-olive);
+  margin-bottom: 10px;
+}
+
+.instagram-section p {
+  font-family: var(--font-light);
+  font-size: 15px;
+  line-height: 1.875em;
+  color: var(--color-white);
+  margin-bottom: 30px;
+}
+
+.instagram-section p a {
+  color: var(--color-olive);
+  transition: color 0.4s ease;
+}
+
+.instagram-section p a:hover {
+  color: var(--color-olive-light);
+}
+
+.instagram-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 4px;
+  max-width: var(--site-width);
+  margin: 0 auto;
+  padding: 0 30px;
+}
+
+.instagram-grid a {
+  display: block;
+  aspect-ratio: 1;
+  overflow: hidden;
+}
+
+.instagram-grid img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+
+.instagram-grid a:hover img {
+  transform: scale(1.05);
+  opacity: 0.85;
+}
+
+/* ============================================
+   CONTACT SECTION
+   ============================================ */
+.contact-section {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+.contact-inner {
+  display: flex;
+  max-width: var(--site-width);
+  margin: 0 auto;
+  padding: 60px 30px;
+}
+
+.contact-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.contact-info h2 {
+  font-family: var(--font-book);
+  font-size: 40px;
+  line-height: 1.35em;
+  font-weight: 400;
+  color: var(--color-olive);
+  margin-bottom: 20px;
+}
+
+.contact-info p {
+  font-family: var(--font-light);
+  font-size: 15px;
+  line-height: 1.875em;
+  color: var(--color-white);
+}
+
+.contact-info a {
+  color: var(--color-white);
+  transition: color 0.4s ease;
+}
+
+.contact-info a:hover {
+  color: var(--color-grey-light);
+}
+
+.contact-form {
+  flex: 1;
+  padding: 40px 20px;
+}
+
+.form-group {
+  margin-bottom: 16px;
+}
+
+.form-group label {
+  display: block;
+  font-family: var(--font-light);
+  font-size: 14px;
+  line-height: 1.79em;
+  color: var(--color-white);
+  margin-bottom: 4px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 8px 12px;
+  font-family: var(--font-light);
+  font-size: 15px;
+  line-height: 1.875em;
+  color: var(--color-black);
+  background: var(--color-white);
+  border: 1px solid var(--color-grey-med);
+  outline: none;
+  transition: border-color 0.4s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: var(--color-olive);
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.btn-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 40px;
+  border: 1px solid var(--color-olive);
+  background: transparent;
+  color: var(--color-olive);
+  font-family: var(--font-light);
+  font-size: 15px;
+  line-height: 1.875em;
+  cursor: pointer;
+  transition: border-color 0.4s ease, background-color 0.4s ease, color 0.4s ease;
+  margin-top: 8px;
+}
+
+.btn-submit:hover {
+  background-color: var(--color-olive);
+  border-color: transparent;
+  color: var(--color-black);
+}
+
+/* ============================================
+   GOOGLE MAP
+   ============================================ */
+.map-section {
+  width: 100%;
+  height: 400px;
+}
+
+.map-section iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* ============================================
+   BANNER IMAGE SECTION
+   ============================================ */
+.banner-section {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+}
+
+.banner-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+.site-footer {
+  background-color: var(--color-black);
+  color: var(--color-white);
+  min-height: 403px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 50px;
+}
+
+.site-footer p {
+  font-family: var(--font-light);
+  font-size: 14px;
+  line-height: 1.79em;
+  text-align: center;
+}
+
+/* ============================================
+   SUB-PAGES (shared)
+   ============================================ */
+.page-content {
+  max-width: var(--site-width);
+  margin: 0 auto;
+  padding: 60px 30px;
+  min-height: 400px;
+}
+
+.page-content h1 {
+  font-family: var(--font-book);
+  font-size: 50px;
+  line-height: 1.34em;
+  font-weight: 400;
+  color: var(--color-black);
+  margin-bottom: 20px;
+}
+
+.page-content h2 {
+  font-family: var(--font-book);
+  font-size: 28px;
+  line-height: 1.375em;
+  font-weight: 400;
+  color: var(--color-olive);
+  margin-bottom: 15px;
+}
+
+.page-content p {
+  font-family: var(--font-light);
+  font-size: 15px;
+  line-height: 1.875em;
+  color: var(--color-black);
+  margin-bottom: 15px;
+}
+
+/* --- Price List Table --- */
+.price-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 30px 0;
+}
+
+.price-table th {
+  font-family: var(--font-book);
+  font-size: 15px;
+  text-align: left;
+  padding: 12px 0;
+  border-bottom: 2px solid var(--color-olive);
+  color: var(--color-olive);
+}
+
+.price-table td {
+  font-family: var(--font-light);
+  font-size: 15px;
+  line-height: 1.875em;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--color-grey-light);
+}
+
+.price-table td:last-child {
+  text-align: right;
+}
+
+/* --- Team Grid --- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.team-card {
+  text-align: center;
+}
+
+.team-card .team-photo {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background-color: var(--color-grey-light);
+  margin-bottom: 15px;
+  overflow: hidden;
+}
+
+.team-card h3 {
+  font-family: var(--font-book);
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--color-black);
+  margin-bottom: 5px;
+}
+
+.team-card p {
+  font-family: var(--font-light);
+  font-size: 14px;
+  color: var(--color-grey);
+}
+
+/* ============================================
+   RESPONSIVE (Mobile)
+   ============================================ */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .header-nav {
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+  }
+
+  .nav-menu {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .nav-menu a {
+    padding: 10px;
+  }
+
+  .header-contact {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .social-bar {
+    justify-content: center;
+  }
+
+  .hero {
+    height: 500px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+
+  .hero .subtitle {
+    font-size: 16px;
+  }
+
+  .hours-section {
+    flex-direction: column;
+  }
+
+  .hours-image {
+    flex: none;
+    width: 100%;
+    height: 300px;
+  }
+
+  .contact-inner {
+    flex-direction: column;
+  }
+
+  .banner-section {
+    height: 250px;
+  }
+
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .instagram-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ============================================
+   HERO SECTION - RESPONSIVE FIX
+   ============================================ */
+.hero {
+    background-image: url('../images/hero.jpg') !important;
+    background-attachment: fixed !important;
+    background-position: center top !important;
+    /* Changed from 100% auto to cover to prevent white gaps on resize */
+    background-size: cover !important; 
+    background-repeat: no-repeat !important;
+    height: 600px !important;
+    border: 30px solid var(--color-black) !important; 
+    box-sizing: border-box !important;
+}
+/* 4. Hide original images to allow parallax to show */
+.hero-bg, .hours-image img {
+    display: none !important;
+}
+
+/* ============================================
+   HOURS SECTION - REFINED FRAME
+   ============================================ */
+
+.hours-wrapper {
+    background-color: var(--color-olive-dark) !important;
+    padding: 10px 0 !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+.hours-section {
+    display: flex !important;
+    width: 96% !important;
+    max-width: 95% !important;
+    margin: 0 auto !important;
+    height: 501px !important;
+    background-color: var(--color-black) !important;
+    overflow: hidden !important;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ============================================
+   HOURS SECTION - IMAGE ASPECT & FRAMING
+   ============================================ */
+
+.hours-image {
+    /* 1. Aspect Ratio: Giving the image 65% of the width to match the Wix framing */
+    flex: 0 0 65% !important; 
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../images/natural-beauty.jpg') !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+    height: 100% !important;
+    border-top: none !important;
+
+    /* 2. Scaling: 100% width ensures the face is not zoomed in too much */
+    background-size: 50% auto !important;
+
+    /* 3. Framing: 
+       - 15% horizontal moves her face to the left to show more hair.
+       - 42% vertical pulls the image down so her eyes and nose are in the window.
+    */
+    background-position: 15% 1% !important; 
+}
+
+.hours-content {
+    /* Adjusting content to occupy the remaining 35% */
+    flex: 0 0 35% !important;
+    padding: 40px !important;
+    background-color: var(--color-black) !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+/* --- Mobile Layout & Readability Fixes --- */
+@media (max-width: 768px) {
+    /* Hero: Allow height to grow and improve text contrast */
+    .hero {
+        height: auto !important;
+        min-height: 450px !important;
+        padding: 60px 20px !important;
+        background-attachment: scroll !important; /* Fixes "massive" zoom on mobile */
+        background-size: cover !important;
+    }
+
+    .hero h1, .hero .subtitle, .hero .description {
+        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6) !important; /* Makes white text readable */
+    }
+
+    /* Hours: Prevent text from being chopped off */
+    .hours-section {
+        flex-direction: column !important;
+        height: auto !important; /* Critical: allows container to expand for the list */
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+
+    .hours-image {
+        flex: none !important;
+        width: 100% !important;
+        height: 300px !important; /* Set a fixed height for the image part on mobile */
+        background-attachment: scroll !important;
+        background-size: cover !important;
+        background-position: center !important;
+    }
+
+    .hours-content {
+        flex: none !important;
+        width: 100% !important;
+        padding: 40px 30px !important; /* More breathing room for the list */
+        height: auto !important;
+    }
+
+    .hours-content h2, .hours-content p {
+        text-align: center !important; /* Better flow for mobile reading */
+    }
+}
+
+/* ============================================
+   CONTACT SECTION & MINIMALIST FORM
+   ============================================ */
+.contact-section {
+    background-color: #1a1a1a !important;
+    padding: 80px 0 !important;
+}
+
+.contact-inner {
+    max-width: 1200px !important;
+    gap: 60px !important;
+    display: flex !important;
+}
+
+.contact-info {
+    text-align: left !important;
+    align-items: flex-start !important;
+}
+
+.contact-info h2 {
+    font-family: var(--font-book);
+    font-size: 40px !important;
+    color: var(--color-olive-light) !important;
+    margin-bottom: 30px !important;
+}
+
+/* --- Form Grid Logic --- */
+.contact-form form {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px 40px !important;
+    width: 100% !important;
+}
+
+/* Layout: Name (1) and Phone (3) stay in columns.
+   Email (2), Subject (4), Message (5), and Button span full width. */
+.form-group:nth-of-type(2),
+.form-group:nth-of-type(4),
+.form-group:nth-of-type(5),
+.btn-submit {
+    grid-column: 1 / -1 !important;
+}
+
+/* --- Input Styling --- */
+.form-group label {
+    display: block !important;
+    font-family: var(--font-light);
+    font-size: 14px !important;
+    color: var(--color-white) !important;
+    margin-bottom: 8px !important;
+    letter-spacing: 0.05em;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100% !important;
+    background: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid var(--color-white) !important;
+    border-radius: 0 !important;
+    color: var(--color-white) !important;
+    padding: 10px 0 !important;
+    font-size: 14px !important;
+    transition: border-color 0.4s ease;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    outline: none !important;
+    border-bottom-color: var(--color-olive-light) !important;
+}
+
+.form-group textarea {
+    height: 120px !important;
+    resize: none !important;
+}
+
+/* --- Submit Button --- */
+.btn-submit {
+    justify-self: end !important;
+    width: 280px !important;
+    background: var(--color-white) !important;
+    color: var(--color-black) !important;
+    border: none !important;
+    padding: 15px !important;
+    font-family: var(--font-light);
+    font-size: 16px !important;
+    cursor: pointer !important;
+    margin-top: 20px !important;
+    transition: opacity 0.4s ease;
+}
+
+.btn-submit:hover {
+    opacity: 0.9 !important;
+}
+
+/* --- Mobile Form Reset --- */
+@media (max-width: 768px) {
+    .contact-form form {
+        grid-template-columns: 1fr !important;
+    }
+    .form-group, .btn-submit {
+        grid-column: span 1 !important;
+    }
+    .btn-submit {
+        width: 100% !important;
+    }
+}
