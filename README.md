@@ -6,6 +6,18 @@ Welcome to the Elevation Hair website repository!
 ## Overview
 This project contains the source code for the Elevation Hair salon website. It includes pages for services, team, products, contact information, and more.
 
+## New Features (2026)
+- **Instagram Widget:** The homepage now features a live Instagram feed powered by [Behold.so](https://behold.so/), embedded via a widget for real-time social updates.
+- **Contact Form:** All main pages use a secure contact form powered by [Web3Forms](https://web3forms.com/), providing spam protection and direct email delivery to the salon.
+- **Online Booking (Coming Soon):** A modal for online booking is present on all main pages. Integration with the Kitomba booking system is planned and will be available soon. For now, the modal provides direct contact options.
+
+### Who & What is Used
+- **Instagram Widget:** [Behold.so](https://behold.so/) (no login required, embedded via script)
+- **Contact Form:** [Web3Forms](https://web3forms.com/) (API-based, no backend required)
+- **Online Booking:** [Kitomba](https://www.kitomba.com/) (integration coming soon)
+
+For more details, see the relevant HTML files and embedded scripts.
+
 ## Project Structure
 - `index.html` — Home page
 - `contact.html` — Contact information and form
