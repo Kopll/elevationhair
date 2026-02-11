@@ -641,303 +641,470 @@ img {
 }
 
 /* ============================================
-   RESPONSIVE (Mobile)
+   RESPONSIVE (Mobile Reset)
    ============================================ */
 @media (max-width: 768px) {
-  .header-top {
-    flex-direction: column;
-    gap: 15px;
-    padding: 20px;
-  }
-
-  .header-nav {
-    flex-direction: column;
-    gap: 10px;
-    padding: 10px;
-  }
-
-  .nav-menu {
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-
-  .nav-menu a {
-    padding: 10px;
-  }
-
-  .header-contact {
-    flex-direction: column;
-    gap: 8px;
-    text-align: center;
-  }
-
-  .social-bar {
-    justify-content: center;
-  }
-
-  .hero {
-    height: 500px;
-  }
-
-  .hero h1 {
-    font-size: 36px;
-  }
-
-  .hero .subtitle {
-    font-size: 16px;
-  }
-
-  .hours-section {
-    flex-direction: column;
-  }
-
-  .hours-image {
-    flex: none;
-    width: 100%;
-    height: 300px;
-  }
-
-  .contact-inner {
-    flex-direction: column;
-  }
-
-  .banner-section {
-    height: 250px;
-  }
-
-  .team-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .instagram-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+  .header-top { flex-direction: column; gap: 15px; padding: 20px; }
+  .header-nav { flex-direction: column; gap: 10px; padding: 10px; }
+  .nav-menu { flex-wrap: wrap; justify-content: center; }
+  .nav-menu a { padding: 10px; }
+  .header-contact { flex-direction: column; gap: 8px; text-align: center; }
+  .social-bar { justify-content: center; }
+  .hero { height: 500px; }
+  .hero h1 { font-size: 36px; }
+  .hero .subtitle { font-size: 16px; }
+  .hours-section { flex-direction: column; }
+  .hours-image { flex: none; width: 100%; height: 300px; }
+  .contact-inner { flex-direction: column; }
+  .banner-section { height: 250px; }
+  .team-grid { grid-template-columns: 1fr; }
+  .instagram-grid { grid-template-columns: repeat(2, 1fr); }
 }
 
 /* ============================================
-   HERO SECTION - RESPONSIVE FIX
+   HERO SECTION - PARALLAX FIX
    ============================================ */
 .hero {
     background-image: url('../images/hero.jpg') !important;
     background-attachment: fixed !important;
     background-position: center top !important;
-    /* Changed from 100% auto to cover to prevent white gaps on resize */
     background-size: cover !important; 
     background-repeat: no-repeat !important;
     height: 600px !important;
     border: 30px solid var(--color-black) !important; 
     box-sizing: border-box !important;
+    font-family: 'Jost', sans-serif !important;
 }
-/* 4. Hide original images to allow parallax to show */
-.hero-bg, .hours-image img {
-    display: none !important;
-}
+.hero-bg { display: none !important; }
+.hero-overlay { position: absolute; inset: 0; background: rgba(24, 24, 24, 0.4); z-index: 0; }
+.hero-content { position: relative; z-index: 1; max-width: 900px; padding: 20px; }
+.hero-est { display: block; letter-spacing: 0.4em; font-size: 0.8rem; margin-bottom: 15px; font-weight: 300; text-transform: uppercase; }
+.hero h1 { font-size: clamp(2.5rem, 5vw, 72px) !important; font-weight: 400; line-height: 1.25em; margin-bottom: 10px; letter-spacing: -0.01em; }
+.hero .subtitle { font-size: 1.5rem !important; margin-bottom: 25px; font-weight: 300; opacity: 0.9; letter-spacing: 0.05em; }
+.hero-divider { width: 60px; height: 1px; background: rgba(255,255,255,0.6); margin: 0 auto 25px; }
+.hero .description { font-size: 1.1rem !important; line-height: 1.6; margin-bottom: 35px; max-width: 600px; margin: 0 auto; font-weight: 300; }
+.btn-hero { display: inline-block; padding: 15px 40px; border: 1px solid #fff; color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; transition: all 0.3s ease; }
+.btn-hero:hover { background: #fff; color: #181818; }
 
 /* ============================================
-   HOURS SECTION - REFINED FRAME
+   HOURS SECTION - REFINED FRAMING & TABLE
    ============================================ */
-
-.hours-wrapper {
-    background-color: var(--color-olive-dark) !important;
-    padding: 10px 0 !important;
-    display: block !important;
-    width: 100% !important;
-}
-
-.hours-section {
-    display: flex !important;
-    width: 96% !important;
-    max-width: 95% !important;
-    margin: 0 auto !important;
-    height: 501px !important;
-    background-color: var(--color-black) !important;
-    overflow: hidden !important;
-    border: 1px solid rgba(255,255,255,0.05);
-}
-
-/* ============================================
-   HOURS SECTION - IMAGE ASPECT & FRAMING
-   ============================================ */
+.hours-wrapper { background-color: var(--color-olive-dark) !important; padding: 10px 0 !important; width: 100% !important; }
+.hours-section { display: flex !important; width: 96% !important; max-width: 95% !important; margin: 0 auto !important; height: 501px !important; background-color: var(--color-black) !important; overflow: hidden !important; border: 1px solid rgba(255,255,255,0.05); }
 
 .hours-image {
-    /* 1. Aspect Ratio: Giving the image 65% of the width to match the Wix framing */
     flex: 0 0 65% !important; 
     background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../images/natural-beauty.jpg') !important;
     background-attachment: fixed !important;
     background-repeat: no-repeat !important;
-    height: 100% !important;
-    border-top: none !important;
-
-    /* 2. Scaling: 100% width ensures the face is not zoomed in too much */
     background-size: 50% auto !important;
-
-    /* 3. Framing: 
-       - 15% horizontal moves her face to the left to show more hair.
-       - 42% vertical pulls the image down so her eyes and nose are in the window.
-    */
     background-position: 15% 1% !important; 
 }
+.hours-image img { display: none !important; }
 
 .hours-content {
-    /* Adjusting content to occupy the remaining 35% */
-    flex: 0 0 35% !important;
-    padding: 40px !important;
+    flex: 1 !important;
     background-color: var(--color-black) !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: center !important;
     align-items: center !important;
+    padding-right: 85px !important;
 }
 
-/* --- Mobile Layout & Readability Fixes --- */
-@media (max-width: 768px) {
-    /* Hero: Allow height to grow and improve text contrast */
-    .hero {
-        height: auto !important;
-        min-height: 450px !important;
-        padding: 60px 20px !important;
-        background-attachment: scroll !important; /* Fixes "massive" zoom on mobile */
-        background-size: cover !important;
-    }
-
-    .hero h1, .hero .subtitle, .hero .description {
-        text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6) !important; /* Makes white text readable */
-    }
-
-    /* Hours: Prevent text from being chopped off */
-    .hours-section {
-        flex-direction: column !important;
-        height: auto !important; /* Critical: allows container to expand for the list */
-        width: 100% !important;
-        max-width: 100% !important;
-    }
-
-    .hours-image {
-        flex: none !important;
-        width: 100% !important;
-        height: 300px !important; /* Set a fixed height for the image part on mobile */
-        background-attachment: scroll !important;
-        background-size: cover !important;
-        background-position: center !important;
-    }
-
-    .hours-content {
-        flex: none !important;
-        width: 100% !important;
-        padding: 40px 30px !important; /* More breathing room for the list */
-        height: auto !important;
-    }
-
-    .hours-content h2, .hours-content p {
-        text-align: center !important; /* Better flow for mobile reading */
-    }
-}
+.hours-inner-wrap { width: 100%; max-width: 260px; margin: 0 auto; text-align: center; }
+.hours-content h2 { font-family: 'Jost', sans-serif !important; font-size: 28px !important; color: var(--color-olive) !important; margin-bottom: 30px !important; font-weight: 300 !important; letter-spacing: 0.05em !important; text-transform: uppercase !important; }
+.hours-table { width: 100%; display: flex; flex-direction: column; }
+.hours-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid #333; font-family: 'Jost', sans-serif; font-size: 14px; color: #fff; }
+.hours-row span { font-weight: 300; }
+.hours-row strong { font-weight: 400; color: #ccc; }
 
 /* ============================================
    CONTACT SECTION & MINIMALIST FORM
    ============================================ */
-.contact-section {
-    background-color: #1a1a1a !important;
-    padding: 80px 0 !important;
-}
+.contact-section { background-color: #1a1a1a !important; padding: 80px 0 !important; }
+.contact-inner { max-width: 1200px !important; gap: 60px !important; display: flex !important; margin: 0 auto; }
+.contact-info { text-align: left !important; align-items: flex-start !important; flex: 1; }
+.contact-info h2 { font-family: var(--font-book); font-size: 40px !important; color: var(--color-olive-light) !important; margin-bottom: 30px !important; }
+.contact-form { flex: 1; }
+.contact-form form { display: grid !important; grid-template-columns: 1fr 1fr !important; gap: 20px 40px !important; width: 100% !important; }
+.form-group:nth-of-type(2), .form-group:nth-of-type(4), .form-group:nth-of-type(5), .btn-submit { grid-column: 1 / -1 !important; }
+.form-group label { display: block !important; font-family: var(--font-light); font-size: 14px !important; color: var(--color-white) !important; margin-bottom: 8px !important; letter-spacing: 0.05em; }
+.form-group input, .form-group textarea { width: 100% !important; background: transparent !important; border: none !important; border-bottom: 1px solid var(--color-white) !important; color: var(--color-white) !important; padding: 10px 0 !important; font-size: 14px !important; outline: none; transition: border-color 0.4s ease; }
+.form-group input:focus, .form-group textarea:focus { border-bottom-color: var(--color-olive-light) !important; }
+.form-group textarea { height: 120px !important; resize: none !important; }
+.btn-submit { justify-self: end !important; width: 280px !important; background: var(--color-white) !important; color: var(--color-black) !important; border: none !important; padding: 15px !important; font-family: var(--font-light); font-size: 16px !important; cursor: pointer !important; margin-top: 20px !important; transition: opacity 0.4s ease; }
 
-.contact-inner {
-    max-width: 1200px !important;
-    gap: 60px !important;
-    display: flex !important;
-}
+/* ============================================
+   MODAL TOAST NOTIFICATIONS
+   ============================================ */
+.modal-toast { visibility: hidden; opacity: 0; position: fixed; top: 20px; right: 20px; background: #28a745; color: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.5s ease; z-index: 9999; min-width: 300px; }
+.modal-toast.error { background: #d9534f; top: 50%; left: 50%; transform: translate(-50%, -50%); right: auto; width: 90%; max-width: 400px; }
+.modal-toast.show { visibility: visible; opacity: 1; }
+.modal-toast.error.show { transform: translate(-50%, -50%) translateY(10px); }
+.modal-content { display: flex; align-items: center; gap: 15px; justify-content: space-between; }
+.btn-close { background: none; border: 1px solid rgba(255,255,255,0.5); color: white; padding: 2px 8px; cursor: pointer; border-radius: 4px; font-size: 14px; }
+.btn-close:hover { background: rgba(255,255,255,0.2); }
 
-.contact-info {
-    text-align: left !important;
-    align-items: flex-start !important;
-}
-
-.contact-info h2 {
-    font-family: var(--font-book);
-    font-size: 40px !important;
-    color: var(--color-olive-light) !important;
-    margin-bottom: 30px !important;
-}
-
-/* --- Form Grid Logic --- */
-.contact-form form {
-    display: grid !important;
-    grid-template-columns: 1fr 1fr !important;
-    gap: 20px 40px !important;
-    width: 100% !important;
-}
-
-/* Layout: Name (1) and Phone (3) stay in columns.
-   Email (2), Subject (4), Message (5), and Button span full width. */
-.form-group:nth-of-type(2),
-.form-group:nth-of-type(4),
-.form-group:nth-of-type(5),
-.btn-submit {
-    grid-column: 1 / -1 !important;
-}
-
-/* --- Input Styling --- */
-.form-group label {
-    display: block !important;
-    font-family: var(--font-light);
-    font-size: 14px !important;
-    color: var(--color-white) !important;
-    margin-bottom: 8px !important;
-    letter-spacing: 0.05em;
-}
-
-.form-group input, 
-.form-group textarea {
-    width: 100% !important;
-    background: transparent !important;
-    border: none !important;
-    border-bottom: 1px solid var(--color-white) !important;
-    border-radius: 0 !important;
-    color: var(--color-white) !important;
-    padding: 10px 0 !important;
-    font-size: 14px !important;
-    transition: border-color 0.4s ease;
-}
-
-.form-group input:focus, 
-.form-group textarea:focus {
-    outline: none !important;
-    border-bottom-color: var(--color-olive-light) !important;
-}
-
-.form-group textarea {
-    height: 120px !important;
-    resize: none !important;
-}
-
-/* --- Submit Button --- */
-.btn-submit {
-    justify-self: end !important;
-    width: 280px !important;
-    background: var(--color-white) !important;
-    color: var(--color-black) !important;
-    border: none !important;
-    padding: 15px !important;
-    font-family: var(--font-light);
-    font-size: 16px !important;
-    cursor: pointer !important;
-    margin-top: 20px !important;
-    transition: opacity 0.4s ease;
-}
-
-.btn-submit:hover {
-    opacity: 0.9 !important;
-}
-
-/* --- Mobile Form Reset --- */
+/* ============================================
+   MOBILE RESPONSIVE OVERRIDES
+   ============================================ */
 @media (max-width: 768px) {
-    .contact-form form {
-        grid-template-columns: 1fr !important;
+    .hero { height: auto !important; min-height: 450px !important; padding: 60px 20px !important; background-attachment: scroll !important; }
+    .hero h1, .hero .subtitle, .hero .description { text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6) !important; }
+    .hours-section { flex-direction: column !important; height: auto !important; }
+    .hours-image { width: 100% !important; height: 300px !important; background-attachment: scroll !important; background-size: cover !important; background-position: center !important; }
+    .hours-content { width: 100% !important; padding: 40px 30px !important; height: auto !important; }
+    .contact-form form { grid-template-columns: 1fr !important; }
+}
+
+/* ============================================
+   HEADER ACTION - KITOMBA BOOKING BUTTON
+   ============================================ */
+.header-actions {
+    display: flex;
+    align-items: center;
+}
+
+.btn-book {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 150px;
+    height: 40px;
+    border: 1px solid var(--color-olive);
+    background: transparent;
+    color: var(--color-olive);
+    font-family: var(--font-light);
+    font-size: 13px;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+    transition: all 0.4s ease;
+    position: relative; /* Required for the banner placement */
+    overflow: hidden;   /* Clips the diagonal banner to the button shape */
+}
+
+/* Diagonal "Coming Soon" Banner */
+/* ============================================
+   BOOKING BUTTON - PULSING RIBBON
+   ============================================ */
+.btn-book::after {
+    content: "COMING SOON";
+    position: absolute;
+    top: 5px;
+    right: -35px;
+    width: 140px;
+    background: var(--color-olive);
+    color: var(--color-black);
+    font-size: 7px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-align: center;
+    transform: rotate(35deg);
+    padding: 2px 0;
+    pointer-events: none;
+    
+    /* Pulse Animation */
+    animation: ribbonPulse 4s infinite ease-in-out;
+    transform-origin: center;
+}
+
+/* The Pulse Logic */
+@keyframes ribbonPulse {
+    0% {
+        transform: rotate(35deg) scale(1);
+        opacity: 1;
     }
-    .form-group, .btn-submit {
-        grid-column: span 1 !important;
+    50% {
+        transform: rotate(35deg) scale(1.05);
+        opacity: 0.25;
     }
-    .btn-submit {
-        width: 100% !important;
+    100% {
+        transform: rotate(35deg) scale(1);
+        opacity: 1;
+    }
+}
+
+.btn-book:hover::after {
+    animation-play-state: paused; /* Optional: stops pulsing when user hovers */
+}
+
+.btn-book:hover {
+    background-color: rgba(114, 117, 87, 0.1); /* Subtle olive tint on hover */
+    color: var(--color-olive);
+}
+
+/* ============================================
+   BOOKING MODAL STYLES
+   ============================================ */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-box {
+    background: var(--color-black);
+    border: 1px solid var(--color-olive);
+    width: 90%;
+    max-width: 500px;
+    padding: 60px 40px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
+.modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: var(--color-white);
+    font-size: 30px;
+    cursor: pointer;
+    line-height: 1;
+    opacity: 0.6;
+    transition: opacity 0.3s;
+}
+
+.modal-close:hover { opacity: 1; }
+
+.modal-tag {
+    display: block;
+    letter-spacing: 0.4em;
+    font-size: 0.7rem;
+    color: var(--color-olive);
+    margin-bottom: 20px;
+}
+
+.modal-body h2 {
+    font-family: var(--font-book);
+    color: var(--color-white);
+    font-size: 28px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.modal-body p {
+    color: var(--color-white);
+    font-family: var(--font-light);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 30px;
+    opacity: 0.8;
+}
+
+.btn-book-modal {
+    display: inline-block;
+    padding: 15px 35px;
+    border: 1px solid var(--color-olive);
+    color: var(--color-olive);
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 0.2em;
+    transition: all 0.4s ease;
+}
+
+.btn-book-modal:hover {
+    background: var(--color-olive);
+    color: var(--color-black);
+}
+
+/* ============================================
+   MODAL ACTIONS - MINIMALIST
+   ============================================ */
+.modal-actions {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn-modal-primary {
+    display: inline-block;
+    padding: 15px 40px;
+    border: 1px solid var(--color-olive);
+    color: var(--color-olive);
+    text-decoration: none;
+    font-family: var(--font-light);
+    font-size: 16px;
+    letter-spacing: 0.2em;
+    transition: all 0.4s ease;
+}
+
+.btn-modal-primary:hover {
+    background: var(--color-olive);
+    color: var(--color-black);
+}
+
+.link-to-contact {
+    color: var(--color-white);
+    font-family: var(--font-light);
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-decoration: none;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.link-to-contact:hover {
+    opacity: 1;
+    color: var(--color-olive);
+}
+
+/* ============================================
+   PRODUCTS PAGE STYLES (AVIF OPTIMISED)
+   ============================================ */
+.products-section {
+    background-color: var(--color-black);
+    padding-top: 80px;
+}
+
+.products-header {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.products-header h2.section-title {
+    font-family: 'Jost', sans-serif !important;
+    font-size: 28px !important;
+    color: var(--color-olive) !important;
+    margin-bottom: 30px !important;
+    font-weight: 300 !important;
+    letter-spacing: 0.05em !important;
+    text-transform: uppercase !important;
+    text-align: center !important;
+}
+
+.products-header p.section-subtitle {
+    font-family: var(--font-light);
+    color: var(--color-white);
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto;
+    opacity: 0.8;
+    text-align: center;
+}
+
+.section-title {
+    font-family: var(--font-book);
+    color: var(--color-olive); /* On-theme olive */
+    font-size: 32px;
+    letter-spacing: 0.1em;
+    margin-bottom: 20px;
+    text-transform: capitalize;
+}
+
+.section-subtitle {
+    font-family: var(--font-light);
+    color: var(--color-white); /* White text as requested */
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto;
+    opacity: 0.8;
+}
+
+/* The Light Grey Band from Wix */
+.brand-featured-row {
+    background-color: #cacaca; 
+    padding: 50px 0;
+    margin-bottom: 50px;
+    width: 100%;
+}
+
+.brand-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    flex-wrap: wrap;
+}
+
+.brand-flex img {
+    max-width: 280px;
+    height: auto;
+}
+
+.brand-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 900px;
+    margin: 0 auto;
+    align-items: center;
+}
+
+.brand-item.full-width {
+    grid-column: 1 / -1;
+    margin-bottom: 40px;
+}
+
+.brand-item.centered {
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.brand-item img {
+    max-width: 1080px;
+    height: auto;
+}
+
+/* --- Overlap Logic --- */
+.brand-featured-row {
+    background-color: #cacaca; 
+    padding: 60px 0 100px; /* Extra bottom padding to create space for overlap */
+    margin-bottom: 0; /* Remove margin to keep backgrounds flush */
+    width: 100%;
+}
+
+.pureology-overlap {
+    position: relative;
+    z-index: 10;
+    margin-top: -85px; /* Pulls Pureology up halfway into the grey band */
+    text-align: center;
+}
+
+.pureology-item img {
+    width: 100%;
+    max-width: 980px; /* Matches your site width */
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    .brand-featured-row {
+        padding: 40px 0 60px;
+    }
+    
+    .pureology-overlap {
+        margin-top: -50px; /* Adjusted for smaller screens */
+        padding: 0 15px; /* Prevents edge-to-edge touching on phones */
+    }
+    
+    .pureology-item img {
+        max-width: 100%; /* Forces image to shrink to screen width */
+    }
+    
+    .brand-flex {
+        flex-direction: column;
+        gap: 40px;
     }
 }

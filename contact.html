@@ -1,22 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-AU">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Contact Elevation Hair - 217 Glebe Point Rd, Glebe NSW 2037. Call (02) 9660 4632 or email elevationhair@gmail.com.">
-  <title>Contact | Elevation Hair</title>
+  <meta name="description" content="Contact Elevation Hair - 217 Glebe Point Rd, Glebe NSW 2037. Call (02) 9660 4632 or email elevationhair@gmail.com for hair styling and colour enquiries.">
+  <title>Contact | Elevation Hair Glebe</title>
   <link rel="icon" href="images/favicon.jpg" type="image/jpeg">
   <link rel="stylesheet" href="css/style.css">
+  <style>
+    .modal-toast { visibility: hidden; opacity: 0; position: fixed; top: 20px; right: 20px; background: #28a745; color: white; padding: 15px 25px; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); transition: all 0.5s ease; z-index: 9999; min-width: 300px; }
+    .modal-toast.error { background: #d9534f; top: 50%; left: 50%; transform: translate(-50%, -50%); right: auto; width: 90%; max-width: 400px; }
+    .modal-toast.show { visibility: visible; opacity: 1; }
+    .modal-toast.error.show { transform: translate(-50%, -50%) translateY(10px); }
+    .modal-content { display: flex; align-items: center; gap: 15px; justify-content: space-between; }
+    .btn-close { background: none; border: 1px solid rgba(255,255,255,0.5); color: white; padding: 2px 8px; cursor: pointer; border-radius: 4px; font-size: 14px; }
+    .btn-close:hover { background: rgba(255,255,255,0.2); }
+  </style>
 </head>
 <body>
 
-  <!-- ========== HEADER ========== -->
-  <header class="site-header">
+<header class="site-header">
     <div class="header-top">
       <a href="index.html" class="header-logo">
         <img src="images/logo.png" alt="Elevation Hair logo" width="286" height="40">
       </a>
-      <a href="contact.html" class="btn-contact">Get In Touch</a>
     </div>
 
     <nav class="header-nav">
@@ -30,7 +37,7 @@
         <a href="mailto:elevationhair@gmail.com">elevationhair@gmail.com</a>
         <span>(02) 9660 4632</span>
         <div class="social-bar">
-          <a href="https://maps.google.com/?cid=3767804597546806311" target="_blank" rel="noopener" aria-label="Google Places">
+          <a href="https://www.google.com/maps/search/?api=1&query=Elevation+Hair+Glebe" target="_blank" rel="noopener" aria-label="Google Places">
             <img src="images/icon-google.png" alt="Google Places">
           </a>
           <a href="https://www.instagram.com/elevationhair" target="_blank" rel="noopener" aria-label="Instagram">
@@ -46,63 +53,126 @@
     <div class="header-subbar"></div>
   </header>
 
-  <!-- ========== CONTACT ========== -->
-  <section class="contact-section">
+<section class="contact-section">
     <div class="contact-inner">
       <div class="contact-info">
-        <h2>Contact Us</h2>
-        <p>217 Glebe Point Rd, Glebe NSW 2037, Australia</p>
-        <p><a href="mailto:elevationhair@gmail.com">elevationhair@gmail.com</a></p>
-        <p>(02) 9660 4632</p>
+        <h2>Get in Touch</h2>
+        <p><strong>Address:</strong><br>217 Glebe Point Rd, Glebe NSW 2037, Australia</p>
+        <p><strong>Email:</strong><br><a href="mailto:elevationhair@gmail.com">elevationhair@gmail.com</a></p>
+        <p><strong>Phone:</strong><br>(02) 9660 4632</p>
+        <p><em>Located in the heart of Glebe, we specialise in professional hair care and bespoke styling.</em></p>
       </div>
+
       <div class="contact-form">
-        <form action="https://formsubmit.co/jimmy.halstead@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New enquiry from Elevation Hair website">
-          <input type="hidden" name="_next" value="https://www.elevationhair.com.au/contact">
-          <input type="hidden" name="_captcha" value="true">
-          <input type="text" name="_honey" style="display:none">
+        <form action="https://api.web3forms.com/submit" method="POST" id="form">
+          <input type="hidden" name="access_key" value="c75a9360-7c54-4262-aae4-d62a88b1f773">
+          <input type="hidden" name="subject" value="New Website Enquiry - Elevation Hair">
+          <input type="hidden" name="from_name" value="Elevation Hair Web Bot">
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required maxlength="100">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required maxlength="100">
           </div>
+
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required maxlength="250">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Your email address" required maxlength="250">
           </div>
+
           <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" maxlength="50">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Best contact number" maxlength="50">
           </div>
+
           <div class="form-group">
-            <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Type the subject">
+            <label for="message">Your Enquiry</label>
+            <textarea id="message" name="message" rows="5" placeholder="How can we help you today?" required></textarea>
           </div>
-          <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Type your message here..."></textarea>
-          </div>
-          <button type="submit" class="btn-submit">Submit</button>
+
+          <button type="submit" class="btn-submit">Send Message</button>
+          
+          <div id="result" style="margin-top: 15px; font-weight: bold;"></div>
         </form>
       </div>
     </div>
   </section>
 
-  <!-- ========== MAP ========== -->
-  <section class="map-section">
+<div id="success-modal" class="modal-toast">
+    <div class="modal-content">
+      <span class="check-icon">✓</span>
+      <p>Thank you! Your enquiry has been sent. We'll be in touch shortly.</p>
+      <button type="button" class="btn-close" onclick="closeModal('success-modal')">&times;</button>
+    </div>
+  </div>
+
+<div id="error-modal" class="modal-toast error">
+    <div class="modal-content">
+      <span class="error-icon">⚠</span>
+      <p>Mailing to Elevation Hair failed. Please call the salon directly on <strong>(02) 9660 4632</strong> for your enquiry.</p>
+      <button type="button" class="btn-close" onclick="closeModal('error-modal')">Close</button>
+    </div>
+  </div>
+
+<section class="map-section">
     <iframe
-      title="Google Maps - Elevation Hair"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.5!2d151.1825!3d-33.8795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12b0339e7f8f3b%3A0x3446d97ab4d8a027!2s217%20Glebe%20Point%20Rd%2C%20Glebe%20NSW%202037%2C%20Australia!5e0!3m2!1sen!2sau!4v1"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+      title="Google Maps - Elevation Hair Glebe"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.446862426981!2d151.1825633!3d-33.8781466!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12af9438096c4b%3A0xb0046e7f23055e0!2s217%20Glebe%20Point%20Rd%2C%20Glebe%20NSW%202037!5e0!3m2!1sen!2sau!4v1707600000000!5m2!1sen!2sau"
+      width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
   </section>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="site-footer">
-    <p>&copy;2026 by Elevation Hair</p>
+<footer class="site-footer">
+    <div class="footer-content">
+      <p>© 2026 Elevation Hair. All rights reserved.</p>
+    </div>
   </footer>
 
+<script>
+    const contactForm = document.getElementById('form');
+    const successModal = document.getElementById('success-modal');
+    const errorModal = document.getElementById('error-modal');
+    const resultDiv = document.getElementById('result');
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('show');
+    }
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(contactForm);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      resultDiv.innerHTML = "Sending...";
+
+      fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: json
+      })
+      .then(async (response) => {
+          if (response.status == 200) {
+              successModal.classList.add('show');
+              resultDiv.innerHTML = "";
+              contactForm.reset();
+              setTimeout(() => { successModal.classList.remove('show'); }, 5000);
+          } else {
+              errorModal.classList.add('show');
+              resultDiv.innerHTML = "";
+          }
+      })
+      .catch(error => {
+          errorModal.classList.add('show');
+          resultDiv.innerHTML = "";
+      });
+    });
+
+    document.getElementById('booking-trigger').addEventListener('click', function(e) {
+      e.preventDefault();
+      alert('Booking system integration coming soon!');
+    });
+  </script>
 
 </body>
 </html>

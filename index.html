@@ -7,52 +7,63 @@
   <title>Home | Elevation Hair</title>
   <link rel="icon" href="images/favicon.jpg" type="image/jpeg">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jost:wght@300;400;600&display=swap" rel="stylesheet">
 </head>
 <body>
 
-  <!-- ========== HEADER ========== -->
-  <header class="site-header">
-    <div class="header-top">
-      <a href="/" class="header-logo">
-        <img src="images/logo.png" alt="Elevation Hair logo" width="286" height="40">
-      </a>
-      <a href="contact.html" class="btn-contact">Get In Touch</a>
+ <header class="site-header">
+  <div class="header-top">
+    <a href="/" class="header-logo">
+      <img src="images/logo.png" alt="Elevation Hair logo" width="286" height="40">
+    </a>
+    <div class="header-actions">
+      <!-- <a href="https://booking.kitomba.com/demo-salon" target="_blank" class="btn-book">BOOK ONLINE</a> -->
+      <a href="javascript:void(0)" onclick="openBookingModal()" class="btn-book">BOOK ONLINE</a>
     </div>
+  </div>
 
-    <nav class="header-nav">
-      <ul class="nav-menu">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="price-list.html">Price list</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="header-contact">
-        <a href="mailto:elevationhair@gmail.com">elevationhair@gmail.com</a>
-        <span>(02) 9660 4632</span>
-        <div class="social-bar">
-          <a href="https://maps.google.com/?cid=3767804597546806311" target="_blank" rel="noopener" aria-label="Google Places">
-            <img src="images/icon-google.png" alt="Google Places">
-          </a>
-          <a href="https://www.instagram.com/elevationhair" target="_blank" rel="noopener" aria-label="Instagram">
-            <img src="images/icon-instagram.png" alt="Instagram">
-          </a>
-          <a href="https://www.facebook.com/ElevationHair/" target="_blank" rel="noopener" aria-label="Facebook">
-            <img src="images/icon-facebook.png" alt="Facebook">
-          </a>
-        </div>
+  <nav class="header-nav">
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="price-list.html">Price list</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="header-contact">
+      <a href="mailto:elevationhair@gmail.com">elevationhair@gmail.com</a>
+      <span>(02) 9660 4632</span>
+      <div class="social-bar">
+        <a href="https://maps.google.com" target="_blank" rel="noopener" aria-label="Google Places">
+          <img src="images/icon-google.png" alt="Google Places">
+        </a>
+        <a href="https://www.instagram.com/elevationhair" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="images/icon-instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/ElevationHair/" target="_blank" rel="noopener" aria-label="Facebook">
+          <img src="images/icon-facebook.png" alt="Facebook">
+        </a>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <div class="header-subbar"></div>
-  </header>
+  <div class="header-subbar"></div>
+</header>
 
   <!-- ========== HERO ========== -->
   <section class="hero">
-    <img src="images/hero.jpg" alt="Long Brown Hair" class="hero-bg">
+    <img src="images/hero.jpg" alt="Elevation Hair Styling" class="hero-bg">
+    <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>The Elevation Hair Difference</h1>
-      <p class="subtitle">Look Great. Feel Amazing.</p>
-      <p class="description">Since opening its doors in 1994 located in Sydney's inner-city suburb of Glebe, Elevation Hair has redefined creativity and excellence in hair cutting, styling and colouring for both men and women.</p>
+      <div class="hero-text-wrap">
+        <span class="hero-est">EST. 1994 — GLEBE</span>
+        <h1>The Elevation Hair Difference</h1>
+        <p class="subtitle">Look Great. Feel Amazing.</p>
+        <div class="hero-divider"></div>
+        <p class="description">Redefining creativity and excellence in hair cutting, styling and colouring for both men and women for over three decades.</p>
+        <a href="contact.html" class="btn-hero">Get In Touch</a>
+      </div>
     </div>
   </section>
 
@@ -64,15 +75,15 @@
       </div>
       <div class="hours-content">
         <h2>Our Doors Are Open</h2>
-        <p>
-          M : Closed<br>
-          T:&nbsp;&nbsp;9:30am - 6:30pm<br>
-          W:&nbsp;&nbsp;9:30am - 6:30pm<br>
-          T:&nbsp;&nbsp;9:30am - 8:30pm<br>
-          F:&nbsp;&nbsp;9:30am - 6:30pm<br>
-          S:&nbsp;&nbsp;8:30am - 4:30pm<br>
-          S:&nbsp;&nbsp;Closed
-        </p>
+        <div class="hours-table">
+          <div class="hours-row"><span>M :</span><strong>Closed</strong></div>
+          <div class="hours-row"><span>T :</span><strong>9:30am - 6:30pm</strong></div>
+          <div class="hours-row"><span>W :</span><strong>9:30am - 6:30pm</strong></div>
+          <div class="hours-row"><span>T :</span><strong>9:30am - 8:30pm</strong></div>
+          <div class="hours-row"><span>F :</span><strong>9:30am - 6:30pm</strong></div>
+          <div class="hours-row"><span>S :</span><strong>8:30am - 4:30pm</strong></div>
+          <div class="hours-row"><span>S :</span><strong>Closed</strong></div>
+        </div>
       </div>
     </div>
   </section>
@@ -82,15 +93,16 @@
     <h2>Follow Us</h2>
     <p>See our latest work on <a href="https://www.instagram.com/elevationhair" target="_blank" rel="noopener">@elevationhair</a></p>
     <div class="instagram-grid">
-      <a href="https://www.instagram.com/elevationhair/reel/DUKb8CnD3vw/" target="_blank" rel="noopener"><img src="images/insta-1.jpg" alt="Elevation Hair on Instagram"></a>
+      <!--  <a href="https://www.instagram.com/elevationhair/reel/DUKb8CnD3vw/" target="_blank" rel="noopener"><img src="images/insta-1.jpg" alt="Elevation Hair on Instagram"></a>
       <a href="https://www.instagram.com/elevationhair/p/DT4bL_Nj27x/" target="_blank" rel="noopener"><img src="images/insta-2.jpg" alt="Elevation Hair on Instagram"></a>
       <a href="https://www.instagram.com/elevationhair/reel/DTmBXP2jwl8/" target="_blank" rel="noopener"><img src="images/insta-3.jpg" alt="Elevation Hair on Instagram"></a>
       <a href="https://www.instagram.com/elevationhair/reel/DSdx3zlksED/" target="_blank" rel="noopener"><img src="images/insta-4.jpg" alt="Elevation Hair on Instagram"></a>
       <a href="https://www.instagram.com/elevationhair/p/DSMENtzj577/" target="_blank" rel="noopener"><img src="images/insta-5.jpg" alt="Elevation Hair on Instagram"></a>
       <a href="https://www.instagram.com/elevationhair/p/DPFu33vD5IF/" target="_blank" rel="noopener"><img src="images/insta-6.jpg" alt="Elevation Hair on Instagram"></a>
       <a href="https://www.instagram.com/elevationhair/reel/DO2CfK2D5MP/" target="_blank" rel="noopener"><img src="images/insta-7.jpg" alt="Elevation Hair on Instagram"></a>
-      <a href="https://www.instagram.com/elevationhair/reel/DIkF4AxTDF2/" target="_blank" rel="noopener"><img src="images/insta-8.jpg" alt="Elevation Hair on Instagram"></a>
-    </div>
+      <a href="https://www.instagram.com/elevationhair/reel/DIkF4AxTDF2/" target="_blank" rel="noopener"><img src="images/insta-8.jpg" alt="Elevation Hair on Instagram"></a>-->
+      
+    </div><behold-widget feed-id="TiBTijOa1t6rVAiek2ks"></behold-widget>
   </section>
 
   <!-- ========== CONTACT ========== -->
@@ -103,11 +115,11 @@
         <p>(02) 9660 4632</p>
       </div>
       <div class="contact-form">
-        <form action="https://formsubmit.co/jimmy.halstead@gmail.com" method="POST">
-          <input type="hidden" name="_subject" value="New enquiry from Elevation Hair website">
-          <input type="hidden" name="_next" value="https://www.elevationhair.com.au/index.html">
-          <input type="hidden" name="_captcha" value="true">
-          <input type="text" name="_honey" style="display:none">
+        <form action="https://api.web3forms.com/submit" method="POST" id="home-contact-form">
+          <input type="hidden" name="access_key" value="c75a9360-7c54-4262-aae4-d62a88b1f773">
+          <input type="hidden" name="subject" value="New Home Page Enquiry - Elevation Hair">
+          <input type="hidden" name="from_name" value="Elevation Hair Website">
+          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
           <div class="form-group">
             <label for="name">Name</label>
             <input type="text" id="name" name="name" placeholder="Enter your name" required maxlength="100">
@@ -122,17 +134,53 @@
           </div>
           <div class="form-group">
             <label for="subject">Subject</label>
-            <input type="text" id="subject" name="subject" placeholder="Type the subject">
+            <input type="text" id="subject" name="subject" placeholder="How can we help?">
           </div>
           <div class="form-group">
             <label for="message">Message</label>
-            <textarea id="message" name="message" placeholder="Type your message here..."></textarea>
+            <textarea id="message" name="message" placeholder="Type your message here..." required></textarea>
           </div>
-          <button type="submit" class="btn-submit">Submit</button>
+          <button type="submit" class="btn-submit">Submit Enquiry</button>
+          <div id="home-result" style="margin-top: 15px; font-weight: bold;"></div>
         </form>
       </div>
     </div>
   </section>
+
+  <!-- ========== SUCCESS/FAIL MODAL ========== -->
+  <div id="success-modal" class="modal-toast">
+    <div class="modal-content">
+      <span class="check-icon">✓</span>
+      <p>Thank you! Your enquiry has been sent. We'll be in touch shortly.</p>
+      <button type="button" class="btn-close" onclick="closeModal('success-modal')">&times;</button>
+    </div>
+  </div>
+
+  <div id="error-modal" class="modal-toast error">
+    <div class="modal-content">
+      <span class="error-icon">⚠</span>
+      <p>Mailing to Elevation Hair failed. Please call the salon directly on <strong>(02) 9660 4632</strong> for your enquiry.</p>
+      <button type="button" class="btn-close" onclick="closeModal('error-modal')">Close</button>
+    </div>
+  </div>
+
+  <!-- ========== BOOKING MODAL - COMING SOON ========== -->
+  <div id="bookingModal" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+      <div class="modal-body">
+        <span class="modal-tag">ELEVATION HAIR</span>
+        <h2>Booking Feature Coming Soon</h2>
+        <div class="hero-divider"></div>
+        <p>We are currently integrating booking system to provide a seamless online booking experience. In the meantime, please contact the salon directly to secure your appointment.</p>
+        
+        <div class="modal-actions">
+          <a href="tel:0296604632" class="btn-modal-primary">(02) 9660 4632</a>
+          <a href="contact.html" class="link-to-contact">OR SEND US AN ENQUIRY →</a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ========== MAP ========== -->
   <section class="map-section">
@@ -145,16 +193,82 @@
     </iframe>
   </section>
 
-  <!-- ========== BANNER IMAGE ========== -->
+  <!-- ========== THREE MODELS ========== -->
   <section class="banner-section">
     <img src="images/three-models.jpg" alt="Three Models">
   </section>
 
   <!-- ========== FOOTER ========== -->
   <footer class="site-footer">
-    <p>&copy;2026 by Elevation Hair</p>
+    <p>©2026 by Elevation Hair</p>
   </footer>
 
+  <!-- ========== SCRIPT ========== -->
+  <script>
+    const form = document.getElementById('home-contact-form');
+    const successModal = document.getElementById('success-modal');
+    const errorModal = document.getElementById('error-modal');
+    const resultDiv = document.getElementById('home-result');
 
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('show');
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      resultDiv.innerHTML = "Sending...";
+
+      fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: json
+      })
+      .then(async (response) => {
+          if (response.status == 200) {
+              successModal.classList.add('show');
+              resultDiv.innerHTML = "";
+              form.reset();
+              // Success fades after 5 seconds
+              setTimeout(() => { successModal.classList.remove('show'); }, 5000);
+          } else {
+              // Error stays visible
+              errorModal.classList.add('show');
+              resultDiv.innerHTML = "";
+          }
+      })
+      .catch(error => {
+          errorModal.classList.add('show');
+          resultDiv.innerHTML = "";
+      });
+    });
+
+  (() => {
+    const d=document,s=d.createElement("script");s.type="module";
+    s.src="https://w.behold.so/widget.js";d.head.append(s);
+  })();
+
+  function openBookingModal() {
+      document.getElementById('bookingModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Stop scrolling
+  }
+
+  function closeBookingModal() {
+      document.getElementById('bookingModal').style.display = 'none';
+      document.body.style.overflow = 'auto'; // Restore scrolling
+  }
+
+  // Close if they click outside the box
+  window.onclick = function(event) {
+      const modal = document.getElementById('bookingModal');
+      if (event.target == modal) {
+          closeBookingModal();
+      }
+  }
+
+  </script> 
 </body>
 </html>

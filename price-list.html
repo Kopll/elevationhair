@@ -11,40 +11,43 @@
 <body>
  
   <!-- ========== HEADER ========== -->
-  <header class="site-header">
-    <div class="header-top">
-      <a href="index.html" class="header-logo">
-        <img src="images/logo.png" alt="Elevation Hair logo" width="286" height="40">
-      </a>
-      <a href="contact.html" class="btn-contact">Get In Touch</a>
+ <header class="site-header">
+  <div class="header-top">
+    <a href="/" class="header-logo">
+      <img src="images/logo.png" alt="Elevation Hair logo" width="286" height="40">
+    </a>
+    <div class="header-actions">
+      <!-- <a href="https://booking.kitomba.com/demo-salon" target="_blank" class="btn-book">BOOK ONLINE</a> -->
+      <a href="javascript:void(0)" onclick="openBookingModal()" class="btn-book">BOOK ONLINE</a>
     </div>
+  </div>
 
-    <nav class="header-nav">
-      <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="price-list.html" class="active">Price list</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-      <div class="header-contact">
-        <a href="mailto:elevationhair@gmail.com">elevationhair@gmail.com</a>
-        <span>(02) 9660 4632</span>
-        <div class="social-bar">
-          <a href="https://maps.google.com/?cid=3767804597546806311" target="_blank" rel="noopener" aria-label="Google Places">
-            <img src="images/icon-google.png" alt="Google Places">
-          </a>
-          <a href="https://www.instagram.com/elevationhair" target="_blank" rel="noopener" aria-label="Instagram">
-            <img src="images/icon-instagram.png" alt="Instagram">
-          </a>
-          <a href="https://www.facebook.com/ElevationHair/" target="_blank" rel="noopener" aria-label="Facebook">
-            <img src="images/icon-facebook.png" alt="Facebook">
-          </a>
-        </div>
+  <nav class="header-nav">
+    <ul class="nav-menu">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="price-list.html">Price list</a></li>
+      <li><a href="products.html">Products</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="header-contact">
+      <a href="mailto:elevationhair@gmail.com">elevationhair@gmail.com</a>
+      <span>(02) 9660 4632</span>
+      <div class="social-bar">
+        <a href="https://maps.google.com" target="_blank" rel="noopener" aria-label="Google Places">
+          <img src="images/icon-google.png" alt="Google Places">
+        </a>
+        <a href="https://www.instagram.com/elevationhair" target="_blank" rel="noopener" aria-label="Instagram">
+          <img src="images/icon-instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.facebook.com/ElevationHair/" target="_blank" rel="noopener" aria-label="Facebook">
+          <img src="images/icon-facebook.png" alt="Facebook">
+        </a>
       </div>
-    </nav>
+    </div>
+  </nav>
 
-    <div class="header-subbar"></div>
-  </header>
+  <div class="header-subbar"></div>
+</header>
 
   <!-- ========== PRICE LIST ========== -->
   <div class="page-content">
@@ -123,5 +126,90 @@
     <p>&copy;2026 by Elevation Hair</p>
   </footer>
 
+  <!-- ========== BOOKING MODAL - COMING SOON ========== -->
+  <div id="bookingModal" class="modal-overlay">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeBookingModal()">&times;</button>
+      <div class="modal-body">
+        <span class="modal-tag">ELEVATION HAIR</span>
+        <h2>Booking Feature Coming Soon</h2>
+        <div class="hero-divider"></div>
+        <p>We are currently integrating booking system to provide a seamless online booking experience. In the meantime, please contact the salon directly to secure your appointment.</p>
+        
+        <div class="modal-actions">
+          <a href="tel:0296604632" class="btn-modal-primary">(02) 9660 4632</a>
+          <a href="contact.html" class="link-to-contact">OR SEND US AN ENQUIRY →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <!-- ========== SCRIPT ========== -->
+  <script>
+    const form = document.getElementById('home-contact-form');
+    const successModal = document.getElementById('success-modal');
+    const errorModal = document.getElementById('error-modal');
+    const resultDiv = document.getElementById('home-result');
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove('show');
+    }
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const object = Object.fromEntries(formData);
+      const json = JSON.stringify(object);
+
+      resultDiv.innerHTML = "Sending...";
+
+      fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+          body: json
+      })
+      .then(async (response) => {
+          if (response.status == 200) {
+              successModal.classList.add('show');
+              resultDiv.innerHTML = "";
+              form.reset();
+              // Success fades after 5 seconds
+              setTimeout(() => { successModal.classList.remove('show'); }, 5000);
+          } else {
+              // Error stays visible
+              errorModal.classList.add('show');
+              resultDiv.innerHTML = "";
+          }
+      })
+      .catch(error => {
+          errorModal.classList.add('show');
+          resultDiv.innerHTML = "";
+      });
+    });
+
+  (() => {
+    const d=document,s=d.createElement("script");s.type="module";
+    s.src="https://w.behold.so/widget.js";d.head.append(s);
+  })();
+
+  function openBookingModal() {
+      document.getElementById('bookingModal').style.display = 'flex';
+      document.body.style.overflow = 'hidden'; // Stop scrolling
+  }
+
+  function closeBookingModal() {
+      document.getElementById('bookingModal').style.display = 'none';
+      document.body.style.overflow = 'auto'; // Restore scrolling
+  }
+
+  // Close if they click outside the box
+  window.onclick = function(event) {
+      const modal = document.getElementById('bookingModal');
+      if (event.target == modal) {
+          closeBookingModal();
+      }
+  }
+
+  </script> 
 </body>
 </html>
