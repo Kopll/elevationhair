@@ -102,7 +102,7 @@
       <a href="https://www.instagram.com/elevationhair/reel/DO2CfK2D5MP/" target="_blank" rel="noopener"><img src="images/insta-7.jpg" alt="Elevation Hair on Instagram"></a>
       <a href="https://www.instagram.com/elevationhair/reel/DIkF4AxTDF2/" target="_blank" rel="noopener"><img src="images/insta-8.jpg" alt="Elevation Hair on Instagram"></a>-->
       
-    </div><behold-widget feed-id="TiBTijOa1t6rVAiek2ks"></behold-widget>
+    </div><behold-widget feed-id="YhJqp9Yngt9HkYeh34hg"></behold-widget>
   </section>
 
   <!-- ========== CONTACT ========== -->
@@ -129,8 +129,16 @@
             <input type="email" id="email" name="email" placeholder="Enter your email" required maxlength="250">
           </div>
           <div class="form-group">
-            <label for="phone">Phone</label>
-            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" maxlength="50">
+            <label for="phone">Phone <span style="color: var(--color-olive);">*</span></label>
+              <input type="tel" 
+                    id="phone" 
+                    name="phone" 
+                    placeholder="e.g. 0412 345 678" 
+                    maxlength="50" 
+                    required>
+              <div id="phone-error" style="color: #ff4d4d; font-size: 11px; margin-top: 5px; display: none;">
+                Please enter a valid Australian mobile or landline number.
+              </div>
           </div>
           <div class="form-group">
             <label for="subject">Subject</label>
@@ -268,7 +276,37 @@
           closeBookingModal();
       }
   }
+// Validation function for Australian numbers
+function validateAustralianPhone(phone) {
+    // Remove spaces, dashes, and brackets
+    const cleanPhone = phone.replace(/[\s\-\(\)]/g, '');
+    
+    // Regex for:
+    // Mobile: 04 or 05 followed by 8 digits
+    // Landline: 02, 03, 07, or 08 followed by 8 digits
+    const auPhoneRegex = /^(04|05|02|03|07|08)\d{8}$/;
+    
+    return auPhoneRegex.test(cleanPhone);
+}
 
+// Update your existing form listener:
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const phoneInput = document.getElementById('phone');
+    const phoneError = document.getElementById('phone-error');
+    
+    if (!validateAustralianPhone(phoneInput.value)) {
+        phoneError.style.display = 'block';
+        phoneInput.style.borderBottomColor = '#ff4d4d';
+        return; // Stop the form from sending
+    } else {
+        phoneError.style.display = 'none';
+        phoneInput.style.borderBottomColor = 'var(--color-olive)';
+    }
+
+    // ... continue with your existing Fetch/Web3Forms logic ...
+});
   </script> 
 </body>
 </html>
