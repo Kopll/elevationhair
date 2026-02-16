@@ -203,10 +203,17 @@ img {
   height: 20px;
 }
 
+/* Update your existing .social-bar img to include the transition */
 .social-bar img {
   width: 20px;
   height: 20px;
-  object-fit: cover;
+  object-fit: contain; /* Changed from cover to ensure icons don't crop */
+  transition: opacity 0.3s ease;
+}
+
+/* Add this for the hover effect */
+.social-bar a:hover img {
+  opacity: 0.6;
 }
 
 /* ============================================
