@@ -2,6 +2,7 @@
 # Elevation Hair
 
 Welcome to the Elevation Hair website repository!
+Visit the live site: https://www.elevationhair.com.au
 
 ## Overview
 This project contains the source code for the Elevation Hair salon website. It includes pages for services, team, products, contact information, and more.
@@ -24,7 +25,6 @@ For more details, see the relevant HTML files and embedded scripts.
 - `our-team.html` — Meet the team
 - `price-list.html` — Service pricing
 - `products.html` — Product offerings
-- `source.html`, `source_unminify.html` — Source code reference
 - `css/style.css` — Main stylesheet
 - `images/` — Image assets
 
