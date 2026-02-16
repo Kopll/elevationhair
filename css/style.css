@@ -1,3 +1,7 @@
+/* Price List Page Full Dark Background */
+.price-list-bg {
+  background: var(--color-black) !important;
+}
 /* ============================================
    Elevation Hair - Site Styles
    Replicated from www.elevationhair.com.au
@@ -207,6 +211,7 @@ img {
 .social-bar img {
   width: 20px;
   height: 20px;
+  margin: 10px;
   object-fit: contain; /* Changed from cover to ensure icons don't crop */
   transition: opacity 0.3s ease;
 }
@@ -290,7 +295,7 @@ img {
   flex: 0 0 60%;
   height: 620px;
   overflow: hidden;
-  background: url('../images/natural-beauty.jpg') 28% 0% / cover no-repeat fixed;
+  background: url('../images/natural-beauty.jpg') 28% 0% / cover no-repeat;
 }
 
 .hours-image img {
@@ -535,7 +540,7 @@ img {
 .site-footer {
   background-color: var(--color-black);
   color: var(--color-white);
-  min-height: 403px;
+  min-height: 150px;
   display: flex;
   align-items: flex-end;
   justify-content: center;
@@ -552,37 +557,68 @@ img {
 /* ============================================
    SUB-PAGES (shared)
    ============================================ */
-.page-content {
+
+.page-content.price-list-dark {
   max-width: var(--site-width);
   margin: 0 auto;
   padding: 60px 30px;
   min-height: 400px;
+  background: var(--color-black);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18);
 }
 
-.page-content h1 {
+.price-list-title {
   font-family: var(--font-book);
   font-size: 50px;
   line-height: 1.34em;
   font-weight: 400;
-  color: var(--color-black);
-  margin-bottom: 20px;
+  color: var(--color-olive);
+  margin-bottom: 30px;
+  text-align: center;
+  letter-spacing: 0.04em;
 }
 
-.page-content h2 {
+.price-list-section {
   font-family: var(--font-book);
   font-size: 28px;
   line-height: 1.375em;
   font-weight: 400;
-  color: var(--color-olive);
+  color: var(--color-olive-light);
+  margin-top: 40px;
   margin-bottom: 15px;
+  letter-spacing: 0.03em;
 }
 
-.page-content p {
-  font-family: var(--font-light);
+.price-list-note {
+  margin-top: 30px;
+  color: var(--color-grey);
+  text-align: center;
   font-size: 15px;
-  line-height: 1.875em;
-  color: var(--color-black);
-  margin-bottom: 15px;
+}
+
+/* Price Table Dark Theme */
+.price-table-dark {
+  background: var(--color-charcoal);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+}
+.price-table-dark th {
+  color: var(--color-olive);
+  background: var(--color-black);
+  border-bottom: 2px solid var(--color-olive);
+}
+.price-table-dark td {
+  color: var(--color-white);
+  background: var(--color-charcoal);
+  border-bottom: 1px solid var(--color-olive-light);
+}
+.price-table-dark tr:last-child td {
+  border-bottom: none;
+}
+.price-table-dark td:last-child {
+  text-align: right;
 }
 
 /* --- Price List Table --- */
@@ -690,7 +726,7 @@ img {
 .hero .subtitle { font-size: 1.5rem !important; margin-bottom: 25px; font-weight: 300; opacity: 0.9; letter-spacing: 0.05em; }
 .hero-divider { width: 60px; height: 1px; background: rgba(255,255,255,0.6); margin: 0 auto 25px; }
 .hero .description { font-size: 1.1rem !important; line-height: 1.6; margin-bottom: 35px; max-width: 600px; margin: 0 auto; font-weight: 300; }
-.btn-hero { display: inline-block; padding: 15px 40px; border: 1px solid #fff; color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; transition: all 0.3s ease; }
+.btn-hero { display: inline-block; padding: 15px 40px; border: 1px solid #fff; color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 0.2em; font-size: 0.8rem; transition: all 0.3s ease; margin-top: 25px; }
 .btn-hero:hover { background: #fff; color: #181818; }
 
 /* ============================================
@@ -701,11 +737,10 @@ img {
 
 .hours-image {
     flex: 0 0 65% !important; 
-    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../images/natural-beauty.jpg') !important;
-    background-attachment: fixed !important;
-    background-repeat: no-repeat !important;
-    background-size: 50% auto !important;
-    background-position: 15% 1% !important; 
+    background: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url('../images/natural-beauty.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center; 
 }
 .hours-image img { display: none !important; }
 
@@ -760,7 +795,7 @@ img {
     .hero { height: auto !important; min-height: 450px !important; padding: 60px 20px !important; background-attachment: scroll !important; }
     .hero h1, .hero .subtitle, .hero .description { text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.6) !important; }
     .hours-section { flex-direction: column !important; height: auto !important; }
-    .hours-image { width: 100% !important; height: 300px !important; background-attachment: scroll !important; background-size: cover !important; background-position: center !important; }
+    .hours-image { width: 100% !important; height: 300px !important; background-size: cover !important; background-position: center !important; }
     .hours-content { width: 100% !important; padding: 40px 30px !important; height: auto !important; }
     .contact-form form { grid-template-columns: 1fr !important; }
 }
@@ -991,7 +1026,6 @@ img {
     margin-bottom: 30px !important;
     font-weight: 300 !important;
     letter-spacing: 0.05em !important;
-    text-transform: uppercase !important;
     text-align: center !important;
 }
 
