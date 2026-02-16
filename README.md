@@ -28,6 +28,9 @@ For more details, see the relevant HTML files and embedded scripts.
 - `css/style.css` — Main stylesheet
 - `images/` — Image assets
 
+## Cloudflare Integration
+This site is linked with Cloudflare. Any changes pushed to this repository are automatically published to Cloudflare, ensuring the live site is always up to date with the latest code.
+
 ## Getting Started
 1. Clone the repository:
 	```sh
