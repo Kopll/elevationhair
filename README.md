@@ -2,6 +2,8 @@
 # Elevation Hair
 
 Welcome to the Elevation Hair website repository!
+This README provides an overview of the project, its features, and how to get started.
+
 Visit the live site: https://www.elevationhair.com.au
 
 ## Overview
